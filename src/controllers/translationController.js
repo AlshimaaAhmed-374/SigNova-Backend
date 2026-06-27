@@ -64,7 +64,7 @@ async function textToSign(req, res, next) {
     );
 
     // Save ONLY the original text.
-    const dto = await chatService.addBotTranslationMessage({
+    const dto = await chatService.addTranslationMessage({
       session,
       humanUserId: req.userId,
       type: "translation_text",
@@ -140,7 +140,7 @@ async function signToText(req, res, next) {
       );
     }
 
-    const dto = await chatService.addBotTranslationMessage({
+    const dto = await chatService.addTranslationMessage({
       session,
       humanUserId: req.userId,
       type: "translation_text",
